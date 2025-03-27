@@ -1,7 +1,7 @@
 import { GoogleGenerativeAI } from '@google/generative-ai';
 import { Chess } from 'chess.js';
 
-const genAI = new GoogleGenerativeAI('AIzaSyCkw33uiDQZsuCHbZU3lmkZSdzf79ydyiY');
+const genAI = new GoogleGenerativeAI('');
 
 export async function getAIMove(fen: string): Promise<string[]> {
   const model = genAI.getGenerativeModel({ model: 'gemini-2.0-flash' });
