@@ -86,14 +86,14 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-xl shadow-2xl">
-        <div className="flex items-center mb-6 space-x-3">
-          <Brain className="w-8 h-8 text-green-600" />
-          <h1 className="text-2xl font-bold text-gray-800">Chess vs Gemini AI</h1>
+    <div className="min-h-screen bg-gray-100 flex items-center justify-center p-4">
+      <div className="bg-white p-4 sm:p-8 rounded-xl shadow-2xl w-full max-w-[600px]">
+        <div className="flex items-center mb-4 sm:mb-6 space-x-3">
+          <Brain className="w-6 h-6 sm:w-8 sm:h-8 text-green-600" />
+          <h1 className="text-xl sm:text-2xl font-bold text-gray-800">Chess vs Gemini AI</h1>
         </div>
         
-        <div className="w-[480px] h-[480px] relative">
+        <div className="w-full aspect-square max-w-[480px] mx-auto relative">
           <Chessboard
             position={game.fen()}
             onPieceDrop={onDrop}
@@ -106,14 +106,14 @@ function App() {
           />
         </div>
 
-        <div className="mt-6 text-center">
-          <p className="text-lg font-semibold text-gray-700">
+        <div className="mt-4 sm:mt-6 text-center">
+          <p className="text-base sm:text-lg font-semibold text-gray-700">
             {gameStatus()}
           </p>
           {game.isGameOver() && (
             <button
               onClick={() => setGame(new Chess())}
-              className="mt-4 px-6 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors"
+              className="mt-3 sm:mt-4 px-4 sm:px-6 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors text-sm sm:text-base"
             >
               New Game
             </button>
